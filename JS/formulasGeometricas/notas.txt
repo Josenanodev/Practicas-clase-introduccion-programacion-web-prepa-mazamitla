@@ -1,0 +1,13 @@
+Paso 1: Agregar estructura basica de HTML
+Paso 2: Poner titulo
+Paso 3: Conectar CSS con etiqueta <link>
+Paso 4: Conectar archivo JavaScript con etiqueta <script>
+Paso 5: Hacer estructura de HTML
+        <form> <button> <img> <h1> <p> <input>
+Paso 6: Definir clases y ids en HTML
+Paso 7: Estilizar en CSS
+Paso 8: Hacer mis funciones de la formula del volumen
+Paso 9: Conseguir los valores de los <input>
+Paso 10: Elaboro una funcion que escribe el resultado en el input de resultados
+Paso 11: Hago una funcion de calcular
+Paso 12: Meto la funcion calcular al evento click del boton calcular

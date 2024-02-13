@@ -1,0 +1,9 @@
+ul::after{
+    content: "after";
+    display: block;
+}
+
+ul::before{
+    content: "before";
+    display: block;
+}

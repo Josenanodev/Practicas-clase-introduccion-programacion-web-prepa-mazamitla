@@ -1,0 +1,9 @@
+#contenedor1 p + img, #contenedor2 > div, #contenedor3 {
+    border: 5px dashed #000;
+    background: rgba(105, 105, 105, 0.418);
+    border-radius: 20px;
+    box-shadow: 0px 0px 10px #0098d0c8;
+    margin: 10px;
+}
+
+/* id > clase > elemento */

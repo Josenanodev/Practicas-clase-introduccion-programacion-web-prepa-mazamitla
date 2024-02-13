@@ -1,0 +1,56 @@
+.padre-grid {
+  display: grid;
+  grid-template-areas:
+    "a b c"
+    "d e f"
+    "g h i";
+  grid-template-rows: 50px 200px 50px;
+  grid-template-columns: 50px 80px 50px;
+}
+
+.padre-grid > div {
+  background-color: #ccc;
+  border: 1px solid #999;
+  box-sizing: border-box;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+.hijo-grid-a {
+  grid-area: a;
+}
+
+.hijo-grid-b {
+  grid-area: b;
+}
+
+.hijo-grid-c {
+  grid-area: c;
+}
+
+.hijo-grid-d {
+  grid-area: d;
+}
+
+.hijo-grid-e {
+  grid-area: e;
+}
+
+.hijo-grid-f {
+  grid-area: f;
+}
+
+.hijo-grid-g {
+  grid-area: g;
+}
+
+.hijo-grid-h {
+  grid-area: h;
+}
+
+.hijo-grid-i {
+  grid-area: i;
+}

@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Anuel</title>
+    <link rel="shortcut icon" href="imagenes/anuel-calvo.jpg" type="image/x-icon" />
+    <link rel="stylesheet" href="micss.css" />
+    <script type="text/javascript" src="mijs.js"></script>
+  </head>
+  <body>
+    <header
+      style="
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+      "
+    >
+      <h1>Anuel Calvo</h1>
+      <h2>Por ahí dicen que canta chido</h2>
+      <img src="imagenes/anuel-calvo.jpg" alt="Anuel Calvo con cara de serio" />
+      <nav>
+        <ul class="listas-horizontales">
+          <li><a href="#polemica">Polémica</a></li>
+          <li><a href="#listasdescriptivas">listas descriptivas</a></li>
+          <li><a href="#citas">citas</a></li>
+          <li><a href="#abreviaturas">abreviaturas</a></li>
+          <li><a href="#supsub">Indices</a></li>
+          <li><a href="#codigo">codigo</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <button type="button" onclick='console.log("¿Porque me tocaste?")'>Aprietame</button>
+      <h3 id="polemica">Polémica</h3>
+      <p>
+        El 10 de junio de 2023, dos días después de estar presente en los Premios Heat, en
+        donde fue reconocido por su trayectoria artística, Anuel publicó en su
+        <a
+          href="https://www.instagram.com/p/CtSBmzdPTzZ/?hl=es%2F"
+          target="_blank"
+          title="Publicación en Instagram de donde se esta tomando estos fragmentos de texto"
+          rel="noopener"
+          >Instagram</a
+        >
+        un clip donde se le ve cantar estrofas del tema que se hizo mundialmente conocido.
+      </p>
+      <p>
+        <strong
+          >“Esto es pa’ que te mortifique’ Mastique’ y trague’, trague’ y mastique’ Yo
+          contigo ya no regreso Ni que me llores, ni me suplique’ Entendí que no es culpa
+          mía que te critiquen <em>Yo solo hago música</em>, perdón que te
+          salpique”</strong
+        >, se oye en parte del video.
+      </p>
+      <p>
+        No obstante, ahí no quedó la cosa, pues en la leyenda de dicha publicación colocó
+        lo siguiente:
+        <strong>“Me siento como Shakira hoy 👸👑 EMPODERADA 💪🏽💪🏽💪🏽💪🏽🥺”.</strong>
+      </p>
+      <aside>
+        <h3>Su canciones más escuchadas</h3>
+        <ul class="listas-horizontales">
+          <li>Me gusta</li>
+          <li>La Jeepeta</li>
+          <li>China</li>
+          <li>Secreto</li>
+          <li>La última vez</li>
+        </ul>
+      </aside>
+      <section>
+        <h3 id="listasdescriptivas">
+          Ya no hablemos de mensadas, hablemos de listas descriptivas (dl)
+        </h3>
+        <dl>
+          <dt>aparte</dt>
+          <dd>
+            En las obras dramáticas, corresponde a cuando un personaje comparte un
+            comentario solo con la audiencia para dar efecto cómico o dramático. Suele ser
+            un sentimiento, un pensamiento o información adicional.
+          </dd>
+          <dd>
+            Si la obra es impresa, es una sección de contenido que se relaciona con el
+            tema, pero no encaja directamente en el flujo principal de contenido, de modo
+            que se presenta por separado (a menudo en una caja de texto en el margen).
+          </dd>
+        </dl>
+        <h3 id="citas">Citas, no de salir con alguien, sino citas literarias</h3>
+        <p>
+          De acuerdo con
+          <a href="https://developer.mozilla.org/es/docs/Web/HTML/Element/blockquote">
+            <cite>página de citas en bloque independiente de MDN</cite></a
+          >:
+        </p>
+        <blockquote
+          cite="https://developer.mozilla.org/es/docs/Web/HTML/Element/blockquote"
+        >
+          <p>
+            El <strong>elemento HTML <code>&lt;blockquote&gt;</code></strong> (o
+            <em>elemento HTML de cita en bloque independiente</em>) indica que el texto al
+            que delimita es una cita ampliada.
+          </p>
+        </blockquote>
+        <p>
+          El elemento de cita — <code>&lt;q&gt;</code> — se
+          <q cite="https://developer.mozilla.org/es/docs/Web/HTML/Element/q"
+            >utiliza en citas breves que no requieren saltos de párrafo.</q
+          >
+          --
+          <a href="https://developer.mozilla.org/es/docs/Web/HTML/Element/q">
+            <cite>página q de MDN</cite></a
+          >.
+        </p>
+        <h3 id="abreviaturas">Abreviaturas</h3>
+        <p>
+          Usamos <abbr title="Lenguaje de marcado de hipertexto">HTML</abbr> para
+          estructurar nuestros documentos web.
+        </p>
+
+        <p>
+          Creo que el <abbr title="Reverendo">Rev.</abbr> Green lo hizo en la cocina con
+          la motosierra.
+        </p>
+      </section>
+      <section>
+        <h3 id="supsub">Superíndice y subíndice</h3>
+        <p>Nací el 25<sup>th</sup> de mayo de 2001.</p>
+        <p>
+          La fórmula química de la cafeína es
+          C<sub>8</sub>H<sub>10</sub>N<sub>4</sub>O<sub>2</sub>.
+        </p>
+        <p>If x<sup>2</sup> es 9, x debe ser igual 3 o -3.</p>
+      </section>
+      <section>
+        <h3 id="codigo">Representación del código informático</h3>
+        <pre><code>var para = document.querySelector('p');
+
+    para.onclick = function() {
+      alert('¡Guau!, ¡deja de apretar!');
+    }</code></pre>
+
+        <p>
+          No debes utilizar elementos de presentación como <code>&lt;font&gt;</code> y
+          <code>&lt;center&gt;</code>.
+        </p>
+
+        <p>
+          En el ejemplo de JavaScript anterior, <var>para</var> representa un elemento de
+          párrafo.
+        </p>
+
+        <p>Selecciona todo el texto con <kbd>Ctrl</kbd>/<kbd>Cmd</kbd> + <kbd>A</kbd>.</p>
+
+        <pre>$ <kbd>ping mozilla.org</kbd>
+    <samp>PING mozilla.org (63.245.215.20): 56 bytes de datos
+    64 bytes de 63.245.215.20: icmp_seq=0 ttl=40 time=158.233 ms</samp></pre>
+      </section>
+    </main>
+    <footer>
+      <img
+        src="https://www.instagram.com/static/images/web/mobile_nav_type_logo.png/735145cfe0a4.png"
+        alt="Logo de Instagram"
+      />
+      <p>
+        <a href="https://www.instagram.com/anuel/" target="_blank" rel="noopener"
+          >Instagram de Anuel</a
+        >
+      </p>
+      <p>
+        <a href="https://www.instagram.com/shakira/" target="_blank" rel="noopener"
+          >Instagram de Shakira</a
+        >
+      </p>
+      <address>
+        <p>
+          Chris Mills<br />
+          Manchester<br />
+          The Grim North<br />
+          Reino Unido
+        </p>
+
+        <ul>
+          <li>Tel: 01234 567 890</li>
+          <li>Email: me@grim-north.co.uk</li>
+        </ul>
+      </address>
+    </footer>
+  </body>
+</html>

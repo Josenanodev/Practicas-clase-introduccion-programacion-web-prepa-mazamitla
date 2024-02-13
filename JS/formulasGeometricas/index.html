@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js"></script>
+    <title>Figuras geometricas</title>
+  </head>
+  <body>
+    <h1>Piramide</h1>
+    <section class="descripcion">
+      <img
+        src="https://www.geogebra.org/resource/xyqjzq9y/Thumbnail-1.png"
+        alt="Piramide"
+      />
+      <article class="formula">
+        <h2>Formula</h2>
+        <math>
+          <mrow>
+            <mi>V</mi>
+            <mo>=</mo>
+            <mfrac>
+              <mrow>
+                <mi>B</mi>
+                <mo>&#x22C5;</mo>
+                <mi>h</mi>
+              </mrow>
+              <mn>3</mn>
+            </mfrac>
+          </mrow>
+        </math>
+      </article>
+      <p>
+        La pirámide es un poliedro formado por un polígono que es la base y triángulos que
+        son las caras laterales. El número de caras laterales coincide con el número de
+        lados del polígono que es la base. El vértice de la pirámide es el punto donde se
+        cortan las caras laterales.
+      </p>
+    </section>
+    <section class="calculadora">
+      <form action="piramide.php" method="post">
+        <label for="lado">lado</label>
+        <input type="number" name="lado" id="lado" />
+        <label for="altura">Altura</label>
+        <input type="number" name="altura" id="altura" />
+        <label for="resultado">Resultado</label>
+        <input type="number" name="resultado" id="resultado" disabled />
+        <button type="button" onclick="calcular()">Calcular</button>
+      </form>
+    </section>
+  </body>
+</html>

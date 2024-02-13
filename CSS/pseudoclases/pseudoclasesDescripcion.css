@@ -1,0 +1,256 @@
+/* 
+¿Qué es una pseudoclase?
+Una pseudoclase es un selector que marca los elementos
+que están en un estado específico, por ejemplo, los que
+son el primer elemento de su tipo, o aquellos por los
+que el cursor les pasa por encima. Tienden a actuar 
+como si hubieras aplicado una clase en una parte determinada
+del documento y, a menudo, ayudan a reducir el exceso de
+clases y proporcionan un marcado más flexible y fácil de mantener.
+
+Las pseudoclases son palabras clave que comienzan con dos puntos
+
+Este documento no contienen todas las pseudoclases, para ver mas visita:
+
+https://developer.mozilla.org/es/docs/Learn/CSS/Building_blocks/Selectors/Pseudo-classes_and_pseudo-elements
+*/
+
+/*Sintaxis*/
+:nombre-de-la-pseudoclase {
+  /* Propiedades */
+  width: auto;
+}
+
+/* Pseudoclases de interacción del usuario */
+:hover {
+  /* Selecciona el elemento sobre el que está el cursor */
+  color: yellow;
+}
+
+:active {
+  /* Selecciona el elemento que está siendo activado */
+  color: red;
+}
+
+:focus {
+  /* Selecciona el elemento que tiene el foco */
+  color: green;
+}
+
+:focus-visible {
+  /* Selecciona el elemento que tiene el foco y es visible */
+  color: blue;
+}
+
+:focus-within {
+  /* Selecciona el elemento que tiene un elemento hijo con el foco */
+  color: pink;
+}
+
+/* Pseudoclases de estructura de arbol */
+:root {
+  /* Selecciona el elemento raíz del documento */
+  font-size: large;
+}
+
+:empty {
+  /* Selecciona los elementos que no tienen hijos */
+  color: red;
+}
+
+:first-child {
+  /* Selecciona el primer elemento hijo de su padre */
+  color: red;
+}
+
+:last-child {
+  /* Selecciona el último elemento hijo de su padre */
+  color: blue;
+}
+
+:nth-child(n) {
+  /* Selecciona el elemento hijo n de su padre */
+  color: green;
+}
+
+:nth-last-child(n) {
+  /* Selecciona el elemento hijo n de su padre, contando desde el final */
+  color: yellow;
+}
+
+:nth-of-type(2n) {
+  /* Selecciona el elemento n de su tipo */
+  /* 2n+1 */
+  /* 2n */
+  /* odd */
+  /* even */
+  color: pink;
+}
+
+:nth-last-of-type(2n) {
+  /* Selecciona el elemento n de su tipo, contando desde el final */
+  color: orange;
+}
+
+:only-child {
+  /* Selecciona el elemento que es el único hijo de su padre */
+  color: brown;
+}
+
+:first-of-type {
+  /* Selecciona el elemento que es el primero de su tipo */
+  color: gray;
+}
+
+:last-of-type {
+  /* Selecciona el elemento que es el último de su tipo */
+  color: black;
+}
+
+:only-of-type {
+  /* Selecciona el elemento que es el único de su tipo */
+  color: purple;
+}
+
+/* Pseudoclases funcionales */
+:not(selector) {
+  /* Selecciona los elementos que no coinciden con el selector */
+  color: red;
+}
+
+:is(selector, selector2) {
+  /* Selecciona los elementos que coinciden con el selector */
+  color: blue;
+}
+
+:where(selector, selector2) {
+  /* Selecciona los elementos que coinciden con el selector, sin afectar a los elementos que no coinciden */
+  color: green;
+}
+
+:has(selector) {
+  /* Selecciona los elementos que tienen un elemento hijo que coincide con el selector */
+  color: yellow;
+}
+
+/* Pseudoclases de estado de formulario */
+:enabled {
+  /* Selecciona los elementos que están habilitados */
+  color: pink;
+}
+
+:disabled {
+  /* Selecciona los elementos que están deshabilitados */
+  color: orange;
+}
+
+:checked {
+  /* Selecciona los elementos que están marcados */
+  color: brown;
+}
+
+:indeterminate {
+  /* Selecciona los elementos que están en un estado indeterminado */
+  color: gray;
+}
+
+:placeholder-shown {
+  /* Selecciona los elementos que están mostrando el texto del placeholder */
+  color: black;
+}
+
+:read-only {
+  /* Selecciona los elementos que están en modo de solo lectura */
+  color: purple;
+}
+
+:read-write {
+  /* Selecciona los elementos que están en modo de lectura y escritura */
+  color: red;
+}
+
+:autofill {
+  /* Selecciona los elementos que están en modo de autocompletado */
+  color: blue;
+}
+
+:default {
+  /* Selecciona los elementos que están en modo de default, por ejemplo, un botón submit */
+  color: green;
+}
+
+:blank {
+  /* Selecciona los elementos que están en blanco */
+  color: yellow;
+}
+
+:valid {
+  /* Selecciona los elementos que son válidos */
+  color: pink;
+}
+
+:invalid {
+  /* Selecciona los elementos que son inválidos */
+  color: orange;
+}
+
+:in-range {
+  /* Selecciona los elementos que están en un rango */
+  color: brown;
+}
+
+:out-of-range {
+  /* Selecciona los elementos que están fuera de un rango */
+  color: gray;
+}
+
+:required {
+  /* Selecciona los elementos que son requeridos */
+  color: black;
+}
+
+:optional {
+  /* Selecciona los elementos que son opcionales */
+  color: purple;
+}
+
+:user-invalid {
+  /* Selecciona los elementos que son inválidos, pero solo si el usuario ha interactuado con ellos */
+  color: red;
+}
+
+/* Pseudo clases de ubicación */
+:link {
+  /* Selecciona los enlaces que no han sido visitados */
+  color: pink;
+}
+
+:visited {
+  /* Selecciona los enlaces que han sido visitados */
+  color: orange;
+}
+
+:any-link {
+  /* Selecciona los enlaces */
+  color: brown;
+}
+
+:local-link {
+  /* Selecciona los enlaces que apuntan a un elemento del mismo documento */
+  color: gray;
+}
+
+:target {
+  /* Selecciona el elemento que es el objetivo de la URL */
+  color: black;
+}
+
+:target-within {
+  /* Selecciona el elemento que es el objetivo de la URL, o un elemento hijo de este */
+  color: purple;
+}
+
+:scope {
+  /* Selecciona el elemento que es el elemento raíz de la parte del documento que está siendo procesada */
+  color: red;
+}

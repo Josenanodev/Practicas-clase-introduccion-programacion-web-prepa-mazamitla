@@ -1,0 +1,558 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="main.js"></script>
+    <title>Velocidad y Aceleracion</title>
+  </head>
+  <body>
+    <header>
+      <h1>Velocidad y Aceleracion</h1>
+    </header>
+    <main>
+      <section class="explicacion-velocidad">
+        <h2>Velocidad</h2>
+        <p>
+          La velocidad es una magnitud física de carácter vectorial que expresa el
+          desplazamiento de un objeto por unidad de tiempo. Se representa con la letra
+          <em>v</em>.
+        </p>
+        <p>
+          Podemos calcular la velocidad con respecto a la posicion si sabemos las
+          siguientes variables:
+        </p>
+        <ul class="lista-variables">
+          <li>
+            Posicion inicial
+            <math>
+              <mrow>
+                <mo>=</mo>
+                <msub>
+                  <mi>x</mi>
+                  <mn>0</mn>
+                </msub>
+              </mrow>
+            </math>
+          </li>
+          <li>
+            Posicion final
+            <math>
+              <mrow>
+                <mo>=</mo>
+                <msub>
+                  <mi>x</mi>
+                  <mn>1</mn>
+                </msub>
+              </mrow>
+            </math>
+          </li>
+          <li>
+            Tiempo inicial
+            <math>
+              <mrow>
+                <mo>=</mo>
+                <msub>
+                  <mi>t</mi>
+                  <mn>0</mn>
+                </msub>
+              </mrow>
+            </math>
+          </li>
+          <li>
+            Tiempo final
+            <math>
+              <mrow>
+                <mo>=</mo>
+                <msub>
+                  <mi>t</mi>
+                  <mn>1</mn>
+                </msub>
+              </mrow>
+            </math>
+          </li>
+        </ul>
+        <p>La formula para calcular la velocidad es la siguiente:</p>
+        <math>
+          <mrow>
+            <mi>v</mi>
+            <mo>=</mo>
+            <mfrac>
+              <mrow>
+                <mi>distancia</mi>
+              </mrow>
+              <mrow>
+                <mi>tiempo</mi>
+              </mrow>
+            </mfrac>
+            <mo>=</mo>
+            <mfrac>
+              <mrow>
+                <msub>
+                  <mi>x</mi>
+                  <mn>1</mn>
+                </msub>
+                <mo>-</mo>
+                <msub>
+                  <mi>x</mi>
+                  <mn>0</mn>
+                </msub>
+              </mrow>
+              <mrow>
+                <msub>
+                  <mi>t</mi>
+                  <mn>1</mn>
+                </msub>
+                <mo>-</mo>
+                <msub>
+                  <mi>t</mi>
+                  <mn>0</mn>
+                </msub>
+              </mrow>
+            </mfrac>
+          </mrow>
+        </math>
+      </section>
+      <section class="explicacion-aceleracion">
+        <h2>Aceleracion</h2>
+        <p>
+          La aceleración es una magnitud física de carácter vectorial que expresa la
+          variación de la velocidad de un objeto por unidad de tiempo. Se representa con
+          la letra <em>a</em>.
+        </p>
+        <p>
+          Podemos calcular la aceleracion con respecto a la velocidad si sabemos las
+          siguientes variables:
+        </p>
+        <ul class="lista-variables">
+          <li>
+            Velocidad inicial
+            <math>
+              <mrow>
+                <mo>=</mo>
+                <msub>
+                  <mi>v</mi>
+                  <mn>i</mn>
+                </msub>
+              </mrow>
+            </math>
+          </li>
+          <li>
+            Velocidad final
+            <math>
+              <mrow>
+                <mo>=</mo>
+                <msub>
+                  <mi>v</mi>
+                  <mn>f</mn>
+                </msub>
+              </mrow>
+            </math>
+          </li>
+          <li>
+            Tiempo inicial
+            <math>
+              <mrow>
+                <mo>=</mo>
+                <msub>
+                  <mi>t</mi>
+                  <mn>i</mn>
+                </msub>
+              </mrow>
+            </math>
+          </li>
+          <li>
+            Tiempo final
+            <math>
+              <mrow>
+                <mo>=</mo>
+                <msub>
+                  <mi>t</mi>
+                  <mn>f</mn>
+                </msub>
+              </mrow>
+            </math>
+          </li>
+        </ul>
+        <p>La formula para calcular la aceleracion es la siguiente:</p>
+        <math>
+          <mrow>
+            <mi>a</mi>
+            <mo>=</mo>
+            <mfrac>
+              <mrow>
+                <mi>velocidad</mi>
+              </mrow>
+              <mrow>
+                <mi>tiempo</mi>
+              </mrow>
+            </mfrac>
+            <mo>=</mo>
+            <mfrac>
+              <mrow>
+                <msub>
+                  <mi>v</mi>
+                  <mn>f</mn>
+                </msub>
+                <mo>-</mo>
+                <msub>
+                  <mi>v</mi>
+                  <mn>i</mn>
+                </msub>
+              </mrow>
+              <mrow>
+                <msub>
+                  <mi>t</mi>
+                  <mn>f</mn>
+                </msub>
+                <mo>-</mo>
+                <msub>
+                  <mi>t</mi>
+                  <mn>i</mn>
+                </msub>
+              </mrow>
+            </mfrac>
+          </mrow>
+        </math>
+      </section>
+      <section class="calculos">
+        <h2>
+          Calculadora de velocidad y aceleracion con respecto a la posicion y el tiempo
+        </h2>
+        <p>
+          Pero primero debo calcular las velocidades solo siendo capaz de medir posiciones
+          en distintos tiempos
+        </p>
+        <p>Primero velocidad inicial</p>
+        <math>
+          <mrow>
+            <msub>
+              <mi>v</mi>
+              <mn>i</mn>
+            </msub>
+            <mo>=</mo>
+            <mfrac>
+              <mrow>
+                <msub>
+                  <mi>x</mi>
+                  <mn>1</mn>
+                </msub>
+                <mo>-</mo>
+                <msub>
+                  <mi>x</mi>
+                  <mn>i</mn>
+                </msub>
+              </mrow>
+              <mrow>
+                <msub>
+                  <mi>t</mi>
+                  <mn>1</mn>
+                </msub>
+                <mo>-</mo>
+                <msub>
+                  <mi>t</mi>
+                  <mn>i</mn>
+                </msub>
+              </mrow>
+            </mfrac>
+          </mrow>
+        </math>
+        <p>Ahora velocidad final</p>
+        <math>
+          <mrow>
+            <msub>
+              <mi>v</mi>
+              <mn>f</mn>
+            </msub>
+            <mo>=</mo>
+            <mfrac>
+              <mrow>
+                <msub>
+                  <mi>x</mi>
+                  <mn>f</mn>
+                </msub>
+                <mo>-</mo>
+                <msub>
+                  <mi>x</mi>
+                  <mn>2</mn>
+                </msub>
+              </mrow>
+              <mrow>
+                <msub>
+                  <mi>t</mi>
+                  <mn>f</mn>
+                </msub>
+                <mo>-</mo>
+                <msub>
+                  <mi>t</mi>
+                  <mn>2</mn>
+                </msub>
+              </mrow>
+            </mfrac>
+          </mrow>
+        </math>
+        <p>Finalmente sustituimos en nuestra ecuacion inicial de aceleracion</p>
+        <math>
+          <mrow>
+            <mi>a</mi>
+            <mo>=</mo>
+            <mfrac>
+              <mrow>
+                <mfrac>
+                  <mrow>
+                    <msub>
+                      <mi>x</mi>
+                      <mn>f</mn>
+                    </msub>
+                    <mo>-</mo>
+                    <msub>
+                      <mi>x</mi>
+                      <mn>2</mn>
+                    </msub>
+                  </mrow>
+                  <mrow>
+                    <msub>
+                      <mi>t</mi>
+                      <mn>f</mn>
+                    </msub>
+                    <mo>-</mo>
+                    <msub>
+                      <mi>t</mi>
+                      <mn>2</mn>
+                    </msub>
+                  </mrow>
+                </mfrac>
+                <mo>-</mo>
+                <mfrac>
+                  <mrow>
+                    <msub>
+                      <mi>x</mi>
+                      <mn>1</mn>
+                    </msub>
+                    <mo>-</mo>
+                    <msub>
+                      <mi>x</mi>
+                      <mn>i</mn>
+                    </msub>
+                  </mrow>
+                  <mrow>
+                    <msub>
+                      <mi>t</mi>
+                      <mn>1</mn>
+                    </msub>
+                    <mo>-</mo>
+                    <msub>
+                      <mi>t</mi>
+                      <mn>i</mn>
+                    </msub>
+                  </mrow>
+                </mfrac>
+              </mrow>
+              <mrow>
+                <msub>
+                  <mi>t</mi>
+                  <mn>f</mn>
+                </msub>
+                <mo>-</mo>
+                <msub>
+                  <mi>t</mi>
+                  <mn>i</mn>
+                </msub>
+              </mrow>
+            </mfrac>
+          </mrow>
+        </math>
+
+        <form>
+          <section class="marcas">
+            <div class="marca">
+              <h3>Marca inicial</h3>
+              <label for="posicion-i"
+                ><math>
+                  <mrow>
+                    <msub>
+                      <mi>x</mi>
+                      <mn>i</mn>
+                    </msub>
+                  </mrow>
+                </math></label
+              >
+              <input type="number" name="posicion-i" id="posicion-i" />
+              <label for="tiempo-i">
+                <math>
+                  <mrow>
+                    <msub>
+                      <mi>t</mi>
+                      <mn>i</mn>
+                    </msub>
+                  </mrow>
+                </math>
+              </label>
+              <input type="number" name="tiempo-i" id="tiempo-i" />
+            </div>
+            <div class="marca">
+              <h3>Marca 1</h3>
+              <label for="posicion-1"
+                ><math>
+                  <mrow>
+                    <msub>
+                      <mi>x</mi>
+                      <mn>1</mn>
+                    </msub>
+                  </mrow>
+                </math></label
+              >
+              <input type="number" name="posicion-1" id="posicion-1" />
+              <label for="tiempo-1">
+                <math>
+                  <mrow>
+                    <msub>
+                      <mi>t</mi>
+                      <mn>1</mn>
+                    </msub>
+                  </mrow>
+                </math>
+              </label>
+              <input type="number" name="tiempo-1" id="tiempo-1" />
+            </div>
+            <div class="marca">
+              <h3>Marca 2</h3>
+              <label for="posicion-2"
+                ><math>
+                  <mrow>
+                    <msub>
+                      <mi>x</mi>
+                      <mn>2</mn>
+                    </msub>
+                  </mrow>
+                </math></label
+              >
+              <input type="number" name="posicion-2" id="posicion-2" />
+              <label for="tiempo-2">
+                <math>
+                  <mrow>
+                    <msub>
+                      <mi>t</mi>
+                      <mn>2</mn>
+                    </msub>
+                  </mrow>
+                </math>
+              </label>
+              <input type="number" name="tiempo-2" id="tiempo-2" />
+            </div>
+            <div class="marca">
+              <h3>Marca final</h3>
+              <label for="posicion-f"
+                ><math>
+                  <mrow>
+                    <msub>
+                      <mi>x</mi>
+                      <mn>f</mn>
+                    </msub>
+                  </mrow>
+                </math></label
+              >
+              <input type="number" name="posicion-f" id="posicion-f" />
+              <label for="tiempo-f">
+                <math>
+                  <mrow>
+                    <msub>
+                      <mi>t</mi>
+                      <mn>f</mn>
+                    </msub>
+                  </mrow>
+                </math>
+              </label>
+              <input type="number" name="tiempo-f" id="tiempo-f" />
+            </div>
+          </section>
+          <button type="button" onclick="calcularResultados()">
+            Calcular resultados
+          </button>
+          <h2>Resultados</h2>
+          <div class="resultados">
+            <div class="resultado">
+              <label for="velocidad-i"
+                ><math>
+                  <mrow>
+                    <msub>
+                      <mi>v</mi>
+                      <mo>i</mo>
+                    </msub>
+                    <mo>=</mo>
+                  </mrow>
+                </math></label
+              >
+              <input type="number" name="velocidad-i" id="velocidad-i" disabled />
+              <math>
+                <mrow>
+                  <mfrac>
+                    <mrow>
+                      <mi>u</mi>
+                    </mrow>
+                    <mrow>
+                      <mi>s</mi>
+                    </mrow>
+                  </mfrac>
+                </mrow>
+              </math>
+            </div>
+            <div class="resultado">
+              <label for="velocidad-f"
+                ><math>
+                  <mrow>
+                    <msub>
+                      <mi>v</mi>
+                      <mo>f</mo>
+                    </msub>
+                    <mo>=</mo>
+                  </mrow>
+                </math></label
+              >
+              <input type="number" name="velocidad-f" id="velocidad-f" disabled />
+              <math>
+                <mrow>
+                  <mfrac>
+                    <mrow>
+                      <mi>u</mi>
+                    </mrow>
+                    <mrow>
+                      <mi>s</mi>
+                    </mrow>
+                  </mfrac>
+                </mrow>
+              </math>
+            </div>
+            <div class="resultado">
+              <label for="aceleracion"
+                ><math>
+                  <mrow>
+                    <mi>a</mi>
+                    <mo>=</mo>
+                  </mrow>
+                </math></label
+              >
+              <input type="number" name="aceleracion" id="aceleracion" disabled />
+              <math>
+                <mrow>
+                  <mfrac>
+                    <mrow>
+                      <mi>u</mi>
+                    </mrow>
+                    <mrow>
+                      <msup>
+                        <mi>s</mi>
+                        <mn>2</mn>
+                      </msup>
+                    </mrow>
+                  </mfrac>
+                </mrow>
+              </math>
+            </div>
+          </div>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>

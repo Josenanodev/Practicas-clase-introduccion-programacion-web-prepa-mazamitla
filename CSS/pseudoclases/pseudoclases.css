@@ -1,0 +1,51 @@
+/* 
+¿Qué es una pseudoclase?
+Una pseudoclase es un selector que marca los elementos
+que están en un estado específico, por ejemplo, los que
+son el primer elemento de su tipo, o aquellos por los
+que el cursor les pasa por encima. Tienden a actuar 
+como si hubieras aplicado una clase en una parte determinada
+del documento y, a menudo, ayudan a reducir el exceso de
+clases y proporcionan un marcado más flexible y fácil de mantener.
+
+Las pseudoclases son palabras clave que comienzan con dos puntos
+
+Este documento no contienen todas las pseudoclases, para ver mas visita:
+
+https://developer.mozilla.org/es/docs/Learn/CSS/Building_blocks/Selectors/Pseudo-classes_and_pseudo-elements
+*/
+
+/* Ejemplos */
+li:hover {
+  color: red;
+  background-color: yellow;
+}
+
+li:active {
+  color: yellow;
+  background-color: red;
+}
+
+input:focus {
+  background-color: yellow;
+}
+
+form:focus-within {
+  border: 2px solid red;
+}
+
+input:empty {
+  background-color: rgb(255, 189, 189);
+}
+
+li:first-child {
+  color: red;
+}
+
+li:last-child {
+  color: green;
+}
+
+li:nth-child(3) {
+  color: blue;
+}

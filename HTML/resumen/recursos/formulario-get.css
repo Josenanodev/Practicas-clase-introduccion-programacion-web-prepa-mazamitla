@@ -1,0 +1,97 @@
+html {
+  font-family: "Roboto", sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+  color: #333;
+  background-color: #ffffff;
+}
+
+form {
+  position: relative;
+  width: 100%;
+  max-width: 600px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  background-color: #003b95;
+  box-shadow: 0 0 16px 0px #858585;
+  color: white;
+}
+
+form h1 {
+  font-size: 30px;
+  margin-bottom: 20px;
+}
+
+form h2 {
+  font-size: 20px;
+  margin-bottom: 20px;
+}
+
+form .avion {
+  position: absolute;
+  top: 48px;
+  right: 48px;
+  width: 100px;
+  animation: vuelo-avion 2s infinite ease-in-out;
+}
+
+form label {
+  width: 100%;
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+form input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 15px;
+  border: none;
+  border-radius: 5px;
+  background-color: white;
+  color: #003b95;
+}
+
+form input:focus {
+  outline: none;
+  box-shadow: 0 0 5px #ccc;
+}
+
+form input[type="submit"] {
+  width: 100%;
+  padding: 10px;
+  border: none;
+  border-radius: 5px;
+  background-color: #005ce6;
+  color: white;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+form input[type="submit"]:hover {
+  background-color: #0050c7;
+}
+
+@keyframes vuelo-avion {
+  0% {
+    transform: translate(0, 0) rotate(-5deg);
+  }
+  25% {
+    transform: translate(0, -5px) rotate(5deg);
+  }
+  50% {
+    transform: translate(-5px, 5px) rotate(-5deg);
+  }
+  75% {
+    transform: translate(5px, 0) rotate(5deg);
+  }
+  100% {
+    transform: translate(0, 0) rotate(-5deg);
+  }
+}

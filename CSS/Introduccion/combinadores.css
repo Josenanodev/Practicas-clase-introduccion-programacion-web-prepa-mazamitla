@@ -1,0 +1,37 @@
+/*
+Los combinadores son una forma de combinar selectores CSS entre sí.
+
+Hay cuatro tipos de combinadores en CSS:
+
+    Combinador de descendiente (espacio)
+    Combinador de hijo (>)
+    Combinador de adyacente (+)
+    Combinador de hermano general (~)
+
+Para aprender más sobre combinadores visita:
+https://developer.mozilla.org/es/docs/Learn/CSS/Building_blocks/Selectors/Combinators
+*/
+
+/* Combinador de descendiente (espacio) */
+/* Selecciona todos los elementos que son descendientes de un elemento */
+ .contenedor p {
+  color: red;
+} 
+
+/* Combinador de hijo (>) */
+/* Selecciona todos los elementos que son hijos de un elemento */
+ .contenedor > p {
+  color: blue;
+}
+
+/* Combinador de adyacente (+) */
+/* Selecciona todos los elementos que son adyacentes a un elemento */
+ .contenedor + p {
+  color: green;
+}
+
+/* Combinador de hermano general (~) */
+/* Selecciona todos los elementos que son hermanos de un elemento */
+ .contenedor ~ p {
+  color: pink;
+}

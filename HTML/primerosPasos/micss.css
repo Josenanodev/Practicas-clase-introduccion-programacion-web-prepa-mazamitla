@@ -1,0 +1,5 @@
+.listas-horizontales {
+  display: flex;
+  width: 500px;
+  justify-content: space-around;
+}

@@ -1,0 +1,59 @@
+/*
+¿Qué es un pseudoelemento?
+Los pseudoelementos se comportan de manera similar. 
+Sin embargo, actúan como si hubieras añadido un elemento 
+HTML totalmente nuevo en el marcado, en lugar de haber 
+aplicado una clase nueva a los elementos presentes. Los 
+pseudoelementos empiezan con un doble signo de dos puntos ::.
+
+Este documento no contienen todos los pseudoelementos, para ver mas visita:
+
+https://developer.mozilla.org/es/docs/Web/CSS/Pseudo-elements
+*/
+
+::after {
+  /* Selecciona el último hijo de un elemento */
+  content: "after";
+  color: red;
+}
+
+::before {
+  /* Selecciona el primer hijo de un elemento */
+  content: "before";
+  color: blue;
+}
+
+::first-letter {
+  /* Selecciona la primera letra de un elemento */
+  color: green;
+}
+
+::first-line {
+  /* Selecciona la primera línea de un elemento */
+  color: pink;
+}
+
+::selection {
+  /* Selecciona el texto seleccionado */
+  color: yellow;
+}
+
+::backdrop {
+  /* Selecciona el fondo detrás de un elemento */
+  color: orange;
+}
+
+
+::marker{
+    /* Selecciona el marcador de una lista */
+    color: purple;
+}
+
+::placeholder{
+    /* Selecciona el texto de un placeholder */
+    color: gray;
+}
+
+
+
+

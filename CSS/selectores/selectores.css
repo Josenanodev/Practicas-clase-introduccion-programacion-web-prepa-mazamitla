@@ -1,0 +1,126 @@
+/*
+¿Qué es un selector?
+En un artículo anterior explicamos qué son los selectores. 
+Un selector CSS es la primera parte de una regla CSS. Es un 
+patrón de elementos y otros términos que indican al navegador 
+qué elementos HTML se seleccionan para aplicarles una regla 
+que incluye los valores de las propiedades CSS. El elemento o 
+los elementos seleccionados por el selector se denominan sujeto 
+del selector.
+
+Para aprender más sobre selectores visita:
+
+https://developer.mozilla.org/es/docs/Learn/CSS/Building_blocks/Selectors
+*/
+
+/* Por tipo */
+h3 {
+  color: red;
+}
+
+/* Por clase, se agrega un . antes del nombre de la clase */
+.texto {
+  color: blue;
+}
+
+/* Por id, se agrega un # antes del nombre del id */
+#titulo {
+  color: green;
+}
+
+/* Por atributo */
+/* Se agrega el nombre del atributo entre corchetes */
+[atributo] {
+  color: pink;
+}
+
+/* Selector con atributo*/
+.selector[atributo] {
+  color: orange;
+}
+
+/* Por atributo con valor exacto*/
+[atributo="valor"] {
+  color: yellow;
+}
+
+/* Por atributo con valor que comience con un valor*/
+[atributo^="valor"] {
+  color: brown;
+}
+
+/* Por atributo con valor que termine con un valor*/
+[atributo$="valor"] {
+  color: purple;
+}
+
+/* Por atributo con valor que contenga un valor en cualquier parte*/
+[atributo*="valor"] {
+  color: gray;
+}
+
+/* Por atributo con valor que sea exacto o que contenga un valor en una lista separada por espacios*/
+[atributo~="valor valor2"] {
+  color: black;
+}
+
+/* Por atributo que puede tener valor exacto o puede iniciar con dicho valor seguido de un guion - */
+[atributo|="valor-valor2"] {
+  color: white;
+}
+
+/* Ejemplos */
+li {
+  color: red;
+  background-color: antiquewhite;
+}
+
+.clase {
+  color: blue;
+  background-color: beige;
+}
+
+#identificador {
+  color: green;
+  background-color: aquamarine;
+}
+
+[atributosolo] {
+  color: pink;
+  background-color: darkslategray;
+}
+
+[atributovalor="jorge"] {
+  color: yellow;
+  background-color: darkorange;
+}
+
+[atributovalor^="juan"] {
+  color: brown;
+  background-color: darkseagreen;
+}
+
+[atributovalor$="ito"] {
+  color: purple;
+  background-color: rgb(183, 172, 255);
+}
+
+[atributovalor*="laura"] {
+  color: gray;
+  background-color: darkturquoise;
+}
+
+[atributovalor~="laura"] {
+  color: darkviolet;
+  background-color: rgb(182, 182, 182);
+}
+
+[atributovalor|="juan"] {
+  color: rgb(94, 91, 54);
+  background-color: rgb(255, 189, 189);
+}
+
+.clase[atributovalor="jorge"] {
+  color: rgb(13, 102, 42);
+  background-color: rgb(201, 189, 255);
+}
