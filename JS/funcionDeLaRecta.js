@@ -1,89 +1,62 @@
-//El readline es necesario para poder hacer preguntas al usuario
 const readline = require("readline");
 const rl = readline.createInterface({
   input: process.stdin,
   output: process.stdout,
 });
 
-//Esta variable va a guardar la funcion de la recta cuando la generemos
-const funcionDeLaRecta = function () {};
-
-rl.question(
-  "Ingresa el valor del primer punto separando por comas (ejemplo: 2,5): ",
-  (answer) => {
-    //Van solicitar el primer punto
-  }
-);
-
-rl.question(
-  "Ingresa el valor del segundo punto separando por comas (ejemplo: 2,5): ",
-  (answer) => {
-    //Van solicitar el segundo punto
-  }
-);
-
-rl.question("Ingresa el valor de x para calcular el valor de y: ", (answer) => {
-  //Van solicitar el valor de x
-  //Aqui va a ir la funcion que calcula el valor de y
-});
+let primerPunto = undefined;
+let segundoPunto = undefined;
+const funcionDeLaRecta = {
+  pendiente: undefined,
+  factorB: undefined,
+  expresion: undefined,
+  metodoAlmacenado: () => {
+    console.log("No se ha generado una funcion de la recta");
+    return undefined;
+  },
+};
+const formatoEjemploDePuntoValido = "2,5";
 
 function convierteArrayDeStringsANumeros(arrayDeStrings) {
   const arrayDeNumeros = [];
   for (let i = 0; i < arrayDeStrings.length; i++) {
     const elementoString = arrayDeStrings[i];
-    //parseInt convierte un string a un numero
-    const elementoNumber = parseInt(elementoString);
+    const elementoNumber = Number(elementoString);
     arrayDeNumeros[i] = elementoNumber;
   }
   return arrayDeNumeros;
 }
 
-// 658432,873928 = ["658432", "873928"]
-function validaRespuestaDePuntoDeUsuario(punto) {
-  const esValida = true;
-  const tieneComa = punto.includes(",");
-  if (tieneComa === false) {
-    console.log("No tiene comas");
-    esValida = false;
-    return;
-  }
-  const arraySeParadoPorComas = punto.split(",");
-  const tieneSoloUnaComa = arraySeParadoPorComas.length === 2;
-  if (tieneSoloUnaComa === false) {
-    console.log("Tiene más de una coma");
-    esValida = false;
-    return;
-  }
-  const arrayDeNumeros = convierteArrayDeStringsANumeros(arraySeParadoPorComas);
-  //   const losElementosDelArraySonNumeros = arrayDeNumeros.every(
-  //     (elemento) => typeof elemento === "number"
-  //   );
-  // Este codigo es equivalente al siguiente for
-  const losElementosDelArraySonNumeros = true;
-  for (let i = 0; i < arrayDeNumeros.length; i++) {
-    const elemento = arrayDeNumeros[i];
-    const esNumero = typeof elemento === "number";
-    if (esNumero === false) {
-      losElementosDelArraySonNumeros = false;
-      break;
-    }
-  }
-  if (losElementosDelArraySonNumeros === false) {
-    console.log("No todos los elementos son números");
-    esValida = false;
-    return;
-  }
-  return esValida;
-}
-
-function separaPuntoPorSusComas(punto) {
-  const esValido = validaRespuestaDePuntoDeUsuario(punto);
-  if (esValido === false) {
-    return;
-  }
+function conviertePuntoSeUsuarioAPuntoNumerico(punto) {
   const arraySeParadoPorComas = punto.split(",");
   const arrayDeNumeros = convierteArrayDeStringsANumeros(arraySeParadoPorComas);
   return arrayDeNumeros;
+}
+
+function esNumeroValido(numero) {
+  const esTipoNumero = typeof numero === "number";
+  //NaN: Not a Number
+  const noEsNaN = !isNaN(numero);
+  return esTipoNumero && noEsNaN;
+}
+
+function validaRespuestaDePuntoDeUsuario(punto) {
+  const puntoNumerico = conviertePuntoSeUsuarioAPuntoNumerico(punto);
+  let esValido = true;
+  const puntoContieneSoloDosElementos = puntoNumerico.length === 2;
+  const todosLosElementosSonNumerosValidos = puntoNumerico.every((elemento) =>
+    esNumeroValido(elemento)
+  );
+  if (!puntoContieneSoloDosElementos) {
+    console.log(
+      `El punto ${punto} no es valido, el formato debe ser ${formatoEjemploDePuntoValido}`
+    );
+    esValido = false;
+  } else if (!todosLosElementosSonNumerosValidos) {
+    console.log(`El punto ${punto} no es valido, los valores deben ser numeros`);
+    esValido = false;
+  }
+  return esValido;
 }
 
 function calculaPendienteDeLaRecta(punto1, punto2) {
@@ -108,18 +81,82 @@ function calculaYParaUnaX(pendiente, factorB, x) {
   return y;
 }
 
-function generaFuncionDeLaRecta(punto1, punto2) {
-  const punto1EsValido = validaRespuestaDePuntoDeUsuario(punto1);
-  const punto2EsValido = validaRespuestaDePuntoDeUsuario(punto2);
-  //Hasta aqui nos quedamos
+function generaFuncionDeLaRecta(puntoNumerico1, puntoNumerico2) {
+  const pendiente = calculaPendienteDeLaRecta(puntoNumerico1, puntoNumerico2);
+  const factorB = calculaFactorBDeLaRecta(puntoNumerico1, pendiente);
+  funcionDeLaRecta.pendiente = pendiente;
+  funcionDeLaRecta.factorB = factorB;
+  funcionDeLaRecta.expresion = `y = ${pendiente.toFixed(2)}x + ${factorB.toFixed(2)}`;
+  funcionDeLaRecta.metodoAlmacenado = (x) => {
+    return calculaYParaUnaX(pendiente, factorB, x);
+  };
+  console.log(`La funcion de la recta es: ${funcionDeLaRecta.expresion}`);
 }
 
-//Consigue respuesta de usuario
-//Valida respuesta de usuario, si la respuesta no es valida repite el proceso con un funcion recursiva (anidar la funcion dentro de si misma)
-//Convierte respuesta de usuario a un array de numeros
-//Calcula pendiente de la recta
-//Calcula factor b de la recta
-//Genera funcion de la recta
-//Imprime la funcion de la recta
-//Pregunta por valores de x y responde con valores de y
-//Si el usuario escribe "salir" termina el programa
+function solicitaPrimerPunto() {
+  rl.question(
+    "Ingresa el valor del primer punto separando por comas (ejemplo: 2,5): ",
+    (answer) => {
+      const laRespuestaEsValida = validaRespuestaDePuntoDeUsuario(answer);
+      if (laRespuestaEsValida) {
+        primerPunto = conviertePuntoSeUsuarioAPuntoNumerico(answer);
+        solicitaSegundoPunto();
+      } else {
+        solicitaPrimerPunto();
+      }
+    }
+  );
+}
+
+function solicitaSegundoPunto() {
+  rl.question(
+    "Ingresa el valor del segundo punto separando por comas (ejemplo: 2,5): ",
+    (answer) => {
+      const laRespuestaEsValida = validaRespuestaDePuntoDeUsuario(answer);
+      segundoPunto = conviertePuntoSeUsuarioAPuntoNumerico(answer);
+      const xDelSegundoPuntoEsIgualAlXDelPrimerPunto = primerPunto[0] === segundoPunto[0];
+      if (xDelSegundoPuntoEsIgualAlXDelPrimerPunto) {
+        console.log(
+          "El valor de x del segundo punto no puede ser igual al del primer punto"
+        );
+        solicitaSegundoPunto();
+        return;
+      } else if (laRespuestaEsValida) {
+        generaFuncionDeLaRecta(primerPunto, segundoPunto);
+        solicitaValorDeX();
+      } else {
+        solicitaSegundoPunto();
+      }
+    }
+  );
+}
+
+function elValorDeXEsValido(x) {
+  const valorNumericoDeX = parseInt(x);
+  const esNumero = esNumeroValido(valorNumericoDeX);
+  if (!esNumero) {
+    console.log("El valor de x no es valido, debe ser un numero");
+  }
+  return esNumero;
+}
+
+function solicitaValorDeX() {
+  rl.question(
+    "Ingresa el valor de x para calcular el valor de y, o escriba 'salir' para cerrar el programa: ",
+    (answer) => {
+      if (answer === "salir") {
+        console.log("Hasta luego");
+        rl.close();
+        return;
+      }
+      const xEsValido = elValorDeXEsValido(answer);
+      if (xEsValido) {
+        const valorDeY = funcionDeLaRecta.metodoAlmacenado(answer);
+        console.log(`El valor de y es: ${valorDeY}`);
+      }
+      solicitaValorDeX();
+    }
+  );
+}
+
+solicitaPrimerPunto();
