@@ -1,12 +1,12 @@
 function mutarArray(array) {
-    const arrayNuevoDeNumeros = [];
-    for (let i = 0; i < array.length; i++) {
-        const elemento = array[i];
-        const numero = Number(elemento);
-        const numeroSumadoConTres = numero + 3;
-        arrayNuevoDeNumeros[i] = numeroSumadoConTres;
-    }
-    return arrayNuevoDeNumeros
+  //Creo mi nuevo array vacio
+
+  const cantidadDeValoresEnArray = array.length;
+  for (let index = cantidadDeValoresEnArray; index < cantidadDeValoresEnArray; index++) {
+    const elemento = array[index];
+
+  }
+  return sumaTotal;
 }
 
 module.exports = mutarArray;
