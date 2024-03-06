@@ -1,6 +1,7 @@
 const express = require("express");
 const fs = require("fs");
-
+const mutarArray = require("./mutarArray.js");
+const mutarArray = require("./acciones/mutarArray.js")
 const app = express(); // Crear una instancia de express
 
 app.use(express.json());
@@ -15,22 +16,23 @@ app.get("/otra-cosa/:cosa/:cosaDos", (request, response) => {
   return response.send(json);
 });
 
-app.post("/mensaje", (request, response) => {
+app.post("/array", (request, response) => {
   const body = request.body;
-  const mensaje = body.mensaje;
+  const array = body;
   if (!mensaje) {
-    return response.status(400).send("Falta el mensaje");
+    return response.status(400).send("Falta el array");
   }
-  const milisegundosDeHoy = new Date().getTime();
-  fs.writeFileSync(milisegundosDeHoy + ".txt", mensaje);
-  return response.status(201).send("Mensaje guardado");
+  const id = new Date().getTime();
+  const arrayMutado = mutarArray(array);
+  const json = JSON.stringify(arrayMutado)
+  fs.writeFileSync(id + ".txt", json);
+  return response.status(201).send("array guardado con id: " + id);
 });
 
-app.get("/mensaje/:mensaje", (request, response) => {
-  const nombreMensaje = request.params.mensaje;
-    const mensaje = fs.readFileSync(nombreMensaje +
-      ".txt", "utf8");
-    return response.send(mensaje);
+app.get("/array/:array", (request, response) => {
+  const nombreArray = request.params.array;
+    const array = fs.readFileSync(nombreArray +".txt", "utf8");
+    return response.send(array);
 });
 
 
