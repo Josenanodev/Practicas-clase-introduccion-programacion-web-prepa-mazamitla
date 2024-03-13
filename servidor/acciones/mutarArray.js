@@ -1,4 +1,4 @@
-let array = ["hola", "mundo", "luminetz"];
+let arrayOriginal = ["hola", "mundo", "luminetz"];
 
 function convertirAMayusculas(array) {
     let arrayNuevo = [];
@@ -7,3 +7,6 @@ function convertirAMayusculas(array) {
     }
     return arrayNuevo;
 }
+
+
+console.log("El array es:" + convertirAMayusculas(arrayOriginal))
