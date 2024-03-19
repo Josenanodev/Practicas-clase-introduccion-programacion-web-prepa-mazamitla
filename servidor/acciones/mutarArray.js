@@ -1,16 +1,9 @@
-function mutarArray(array) {
-  //Creo mi nuevo array vacio
+ArrayNumerosSinSumar = [25,50]
+let SumaArray = 0
 
-  const cantidadDeValoresEnArray = array.length;
-  for (let index = cantidadDeValoresEnArray; index < cantidadDeValoresEnArray; index++) {
-    const elemento = array[index];
-
-  }
-  return sumaTotal;
+for (let index = 0; index < ArrayNumerosSinSumar.length; index++) {
+    SumaArray+= ArrayNumerosSinSumar[index];
 }
+console.log("La suma de el array es: " + SumaArray);
 
-module.exports = mutarArray;
-
-//Angle String(valor)
-//David Invertir array con for
-//Rocha .toUpperCase()
+//+= para combinar el valor de una variable con otra
