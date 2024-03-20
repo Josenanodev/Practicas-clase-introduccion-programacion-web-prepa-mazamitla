@@ -1,15 +1,13 @@
 function mutarArray(array) {
-  // mutar el array de strings y devolverlo con mayusculas
-  // let textoMinusculas = "hola, adios!";
-  // let textoMayusculas = textoMinusculas.toUpperCase();
-  // // textoMayusculas = "HOLA, ADIOS!";
-  // console.log(textoMayusculas);
-  const arrayNuevo = [];
-  for(let index = 0; index < array.length; index++){
-      arrayNuevo[index] = array[index].toUpperCase();
-  }
-  return arrayNuevo;
+  // Metodo basico
+  // let arrayNuevo = [];
+  // for (let i = 0; i < array.length; i++) {
+  //     arrayNuevo[i] = array[i].toUpperCase();
+  // }
+  // return arrayNuevo;
+
+  // metodo con map
+  return array.map((elemento) => elemento.toUpperCase());
 }
 
 module.exports = mutarArray;
-
