@@ -1,7 +1,6 @@
 const express = require("express");
 const fs = require("fs");
-const mutarArray = require("./mutarArray.js");
-const mutarArray = require("./acciones/mutarArray.js")
+const mutarArray = require("./acciones/mutarArray.js");
 const app = express(); // Crear una instancia de express
 
 app.use(express.json());
@@ -19,7 +18,7 @@ app.get("/otra-cosa/:cosa/:cosaDos", (request, response) => {
 app.post("/array", (request, response) => {
   const body = request.body;
   const array = body;
-  if (!mensaje) {
+  if (!array) {
     return response.status(400).send("Falta el array");
   }
   const id = new Date().getTime();
