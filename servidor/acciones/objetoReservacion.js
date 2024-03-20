@@ -12,8 +12,8 @@ let reservacion = {
         fechaDeReserva: "2024-02-20",
         habitacion: "101",
         cantidadDePersonas: 2,
-        fechaDeLlegada: "2024-03-20",
-        fechaDeSalida: "2024-03-23",
+        fechaDeLlegada: "2024-07-15",
+        fechaDeSalida: "2024-07-17",
         incluyeMascotas: false,
         serviciosAdicionales: ["Decoracion Romantica", "Cargas de leña adicionales: (2)"],
         estado: false,
@@ -21,7 +21,7 @@ let reservacion = {
     
     informacionPago: {
         metodo: "Transferencia",
-        monto: 2600,
+        monto: 3200,
         anticipos: [{fecha: "2024-02-20", cantidad: 1000}],
     }
 }
@@ -44,5 +44,13 @@ function cambiarEstadoReservacion(reserva, confirmacion) {
     }
 }
 
+function calcularSaldo(reservacion) {
+    const saldoTotal = reservacion.informacionPago.monto;
+    const totalAnticipos = reservacion.informacionPago.anticipos.reduce((total, anticipo) => total + anticipo.cantidad, 0);
+    const saldoRestante = saldoTotal - totalAnticipos;
+    return saldoRestante;
+}
+
 console.log(agregarAnticipo(reservacion, "2024-02-25", 1000))
 console.log(cambiarEstadoReservacion(reservacion, false))
+console.log(calcularSaldo(reservacion));
