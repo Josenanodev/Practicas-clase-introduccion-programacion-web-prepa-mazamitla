@@ -25,3 +25,24 @@ let reservacion = {
         anticipos: [{fecha: "2024-02-20", cantidad: 1000}],
     }
 }
+
+function agregarAnticipo(reservacion, fechaDeAnticipo, montoDeAnticipo) {
+    const anticipoNuevo = {fecha: fechaDeAnticipo, cantidad: montoDeAnticipo};
+    reservacion.informacionPago.anticipos.push(anticipoNuevo)
+    return reservacion.informacionPago.anticipos;
+}
+
+function cambiarEstadoReservacion(reserva, confirmacion) {
+    if (confirmacion === true) {
+        reserva.informacionReservacion.estado = true;
+        return "Reserva confirmada";
+    } 
+    
+    else {
+        reserva.informacionReservacion.estado = false;
+        return "Reserva no confirmada";
+    }
+}
+
+console.log(agregarAnticipo(reservacion, "2024-02-25", 1000))
+console.log(cambiarEstadoReservacion(reservacion, false))
