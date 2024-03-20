@@ -35,22 +35,33 @@ function agregarAnticipo(reservacion, fechaDeAnticipo, montoDeAnticipo) {
 function cambiarEstadoReservacion(reserva, confirmacion) {
     if (confirmacion === true) {
         reserva.informacionReservacion.estado = true;
-        return "Reserva confirmada";
+        return "Confirmada";
     } 
     
     else {
         reserva.informacionReservacion.estado = false;
-        return "Reserva no confirmada";
+        return "No confirmada";
     }
 }
 
-function calcularSaldo(reservacion) {
-    const saldoTotal = reservacion.informacionPago.monto;
-    const totalAnticipos = reservacion.informacionPago.anticipos.reduce((total, anticipo) => total + anticipo.cantidad, 0);
+function calcularSaldo(reserva) {
+    const saldoTotal = reserva.informacionPago.monto;
+    const totalAnticipos = reserva.informacionPago.anticipos.reduce((total, anticipo) => total + anticipo.cantidad, 0);
     const saldoRestante = saldoTotal - totalAnticipos;
     return saldoRestante;
 }
 
-console.log(agregarAnticipo(reservacion, "2024-02-25", 1000))
-console.log(cambiarEstadoReservacion(reservacion, false))
-console.log(calcularSaldo(reservacion));
+function calcularNoches(reserva) {
+    const inicio = new Date(reserva.informacionReservacion.fechaDeLlegada);
+    const fin = new Date(reserva.informacionReservacion.fechaDeSalida);
+    const diferenciaEnMilisegundos = fin - inicio;
+    const milisegundosPorDia = 86400000;
+    const numeroNoches = Math.floor(diferenciaEnMilisegundos / milisegundosPorDia);
+
+    return numeroNoches;
+}
+
+console.log("Anticipos en la reservacion: ", agregarAnticipo(reservacion, "2024-02-25", 1000))
+console.log("Estado de la reservacion: ", cambiarEstadoReservacion(reservacion, true))
+console.log("Saldo restante: " ,calcularSaldo(reservacion));
+console.log("Numero de noches: ", calcularNoches(reservacion));
