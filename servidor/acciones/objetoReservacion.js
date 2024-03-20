@@ -1,36 +1,27 @@
 let reservacion = {
     informacionCliente: {
         nombre: "Angel Romo Godoy",
+        edad: 25,
+        correoElectronico: "angelromogodoy@gmail.com",
         telefono: "3318667585",
-        edad: 25
+        direccion: "Lazaro cardenas 77, Valle De Juarez",
+        documentoIdentidad: "1234567890",
     },
 
     informacionReservacion: {
-        status: false,
         fechaDeReserva: "2024-02-20",
-        cantidadDePersonas: 2,
         habitacion: "101",
+        cantidadDePersonas: 2,
         fechaDeLlegada: "2024-03-20",
         fechaDeSalida: "2024-03-23",
-        incluyeMascotas: false
+        incluyeMascotas: false,
+        serviciosAdicionales: ["Decoracion Romantica", "Cargas de leña adicionales: (2)"],
+        estado: false,
     },
     
     informacionPago: {
         metodo: "Transferencia",
         monto: 2600,
-        anticipos: [
-            {
-                fecha: "2024-02-20",
-                cantidad: 1000
-            }
-        ]
+        anticipos: [{fecha: "2024-02-20", cantidad: 1000}],
     }
 }
-
-function cambiarHabitacion(reservacion, nuevaHabitacion) {
-    reservacion.informacionReservacion.habitacion = nuevaHabitacion
-}
-
-cambiarHabitacion(reservacion, "102")
-
-console.log(reservacion.informacionReservacion.habitacion)
